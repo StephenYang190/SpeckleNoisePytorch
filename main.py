@@ -37,8 +37,8 @@ if __name__ == '__main__':
     parser.add_argument('--device_id', type=str, default='cuda:0')
 
     # Training settings
-    parser.add_argument('--epoch', type=int, default=45)
-    parser.add_argument('--batch_size', type=int, default=8)
+    parser.add_argument('--epoch', type=int, default=80)
+    parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--num_thread', type=int, default=1)
     parser.add_argument('--load', type=str, default='')  # pretrained model
     parser.add_argument('--save_folder', type=str, default='checkpoints/')

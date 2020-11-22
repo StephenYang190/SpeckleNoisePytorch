@@ -109,19 +109,21 @@ class SNRNetwork(nn.Module):
         for i in range(self.hide_layers * 2):
             x_h, x_l = self.octavecons[i]((x_h, x_l))
 
-#             if i < self.hide_layers:
-#                 x_h = median_pool_2d(x_h, self.kernel_size, self.stride, self.padding, self.dilation)
-#                 x_l = median_pool_2d(x_l, self.kernel_size, self.stride, self.padding, self.dilation)
+            if i < self.hide_layers:
+                x_h = median_pool_2d(x_h, self.kernel_size, self.stride, self.padding, self.dilation)
+                x_l = median_pool_2d(x_l, self.kernel_size, self.stride, self.padding, self.dilation)
 
             x_h, x_l = self.rescons[i]((x_h, x_l))
 
         x_l = self.upsample(x_l)
         x_h = self.prouth(x_h)
-        x_h = self.act(x_h)
+        x_h = self.acth(x_h)
+        
         x_l = self.proutl(x_l)
-        x_l = self.act(x_h)
+        x_l = self.actl(x_h)
+        
         output = torch.cat((x_h, x_l), 1)
         output = self.proutc(output)
-        output = self.act(output)
+        output = self.actc(output)
 
         return output

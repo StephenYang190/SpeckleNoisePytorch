@@ -93,10 +93,9 @@ def load_image_test(path):
     im = cv2.imread(path)
     in_ = np.array(im, dtype=np.float32)
     if in_.shape[0] % 2 != 0:
-        in_ = cv2.resize(in_, (in_.shape[0] + 1, in_.shape[1]))
+        in_ = cv2.resize(in_, (in_.shape[1], in_.shape[0] + 1))
     if in_.shape[1] % 2 != 0:
-        in_ = cv2.resize(in_, (in_.shape[0], in_.shape[1] + 1))
-    im_size = tuple(in_.shape[:2])
+        in_ = cv2.resize(in_, (in_.shape[1] + 1, in_.shape[0]))
     in_ = Normalization(in_)
     return in_
 
@@ -104,6 +103,4 @@ def load_image_test(path):
 def Normalization(image):
     in_ = image[:, :, ::-1]
     in_ = in_ / 255.0
-    in_ -= np.array((0.485, 0.456, 0.406))
-    in_ /= np.array((0.229, 0.224, 0.225))
     return in_
