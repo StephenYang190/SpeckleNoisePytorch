@@ -29,7 +29,7 @@ class ResBlock(nn.Module):
 class SNRo(nn.Module):
     def __init__(self, in_channels=3, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
                  alpha_out=0.5, stride=1, padding=0, dilation=1, groups=1, bias=False, hide_layers=8):
-        super(SNRNetwork, self).__init__()
+        super(SNRo, self).__init__()
         # parameters
         self.kernel_size = kernel_size
         self.alpha_in = alpha_in
