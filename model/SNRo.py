@@ -4,28 +4,6 @@ import torch.nn.functional as F
 from model.octconv import *
 
 
-class ResBlock(nn.Module):
-    def __init__(self, in_channels=64, out_channels=64, kernel_size=3, alpha_in=0.5,
-                 alpha_out=0.5, stride=1, padding=0, dilation=1, groups=1, bias=False):
-        super(ResBlock, self).__init__()
-
-        self.conv1 = Conv_BN_ACT(in_channels, out_channels, kernel_size, alpha_in, alpha_out, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
-        self.conv2 = Conv_BN_ACT(in_channels, out_channels, kernel_size, alpha_in, alpha_out, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
-
-    def forward(self, x):
-        x_hi, x_li = x
-
-        x_h, x_l = self.conv1(x)
-        x_h, x_l = self.conv2((x_h, x_l))
-
-        x_h = x_h + x_hi
-        x_l = x_l + x_li
-
-        return x_h, x_l
-
-
 class SNRo(nn.Module):
     def __init__(self, in_channels=3, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
                  alpha_out=0.5, stride=1, padding=0, dilation=1, groups=1, bias=False, hide_layers=8):

@@ -5,7 +5,7 @@ from model.median_pooling import median_pool_2d
 from dataset import load_image_test
 from matplotlib import pyplot as plt
 
-path = "./DataRoot/TEST/origin/1.png"
+path = "./DataRoot/TEST/origin/breast.png"
 img = load_image_test(path)
 img = img[np.newaxis, :]
 img = torch.Tensor(img)

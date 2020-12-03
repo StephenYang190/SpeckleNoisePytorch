@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from model.venconv import *
+from model.median_pooling import median_pool_2d
 
 
 class SNRc(nn.Module):
@@ -39,6 +40,10 @@ class SNRc(nn.Module):
 
         for i in range(self.hide_layers * 2):
             x = self.convs[i]((x))
+
+            if i < self.hide_layers:
+                x = median_pool_2d(x, self.kernel_size, self.stride, self.padding, self.dilation)
+
             x = self.rescons[i]((x))
 
         output = self.prout1(x)
