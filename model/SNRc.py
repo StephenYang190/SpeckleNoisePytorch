@@ -27,10 +27,10 @@ class SNRc(nn.Module):
         self.proin = Conv_BN_ACT(in_channels, hide_channels, kernel_size, stride,
                                  padding, dilation, groups, bias, activation_layer=nn.PReLU)
         # for output
-        self.prout1 = Conv_BN_ACT(in_channels, hide_channels, kernel_size, stride,
+        self.prout1 = Conv_BN_ACT(hide_channels, hide_channels, kernel_size, stride,
                                  padding, dilation, groups, bias, activation_layer=nn.PReLU)
         
-        self.prout2 = Conv_BN_ACT(in_channels, hide_channels, kernel_size, stride,
+        self.prout2 = Conv_BN_ACT(hide_channels, out_channels, kernel_size, stride,
                                  padding, dilation, groups, bias, activation_layer=nn.PReLU)
 
     def forward(self, x):

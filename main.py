@@ -49,7 +49,7 @@ if __name__ == '__main__':
     # Train data
     parser.add_argument('--train_root', type=str, default='./DataRoot/')
     parser.add_argument('--train_list', type=str, default='./DataRoot/train.lst')
-    parser.add_argument('--op', type=str, default='om', choices=['om', 'o', 'c', 'cm'])
+    parser.add_argument('--op', type=str, default='cm', choices=['om', 'o', 'c', 'cm'])
 
     # Testing settings
     parser.add_argument('--model', type=str, default='checkpoints/demo-18/epoch_25.pth')  # Snapshot

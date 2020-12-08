@@ -5,10 +5,10 @@ from model.venconv import *
 from model.median_pooling import median_pool_2d
 
 
-class SNRc(nn.Module):
+class SNRcm(nn.Module):
     def __init__(self, in_channels=3, hide_channels=64, out_channels=1, kernel_size=3,
                  stride=1, padding=0, dilation=1, groups=1, bias=False, hide_layers=8):
-        super(SNRc, self).__init__()
+        super(SNRcm, self).__init__()
         # parameters
         self.kernel_size = kernel_size
         self.stride = stride
@@ -28,10 +28,10 @@ class SNRc(nn.Module):
         self.proin = Conv_BN_ACT(in_channels, hide_channels, kernel_size, stride,
                                  padding, dilation, groups, bias, activation_layer=nn.PReLU)
         # for output
-        self.prout1 = Conv_BN_ACT(in_channels, hide_channels, kernel_size, stride,
+        self.prout1 = Conv_BN_ACT(hide_channels, hide_channels, kernel_size, stride,
                                  padding, dilation, groups, bias, activation_layer=nn.PReLU)
         
-        self.prout2 = Conv_BN_ACT(in_channels, hide_channels, kernel_size, stride,
+        self.prout2 = Conv_BN_ACT(hide_channels, out_channels, kernel_size, stride,
                                  padding, dilation, groups, bias, activation_layer=nn.PReLU)
 
     def forward(self, x):
