@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # Training settings
     parser.add_argument('--epoch', type=int, default=80)
-    parser.add_argument('--batch_size', type=int, default=32)
+    parser.add_argument('--batch_size', type=int, default=16)
     parser.add_argument('--num_thread', type=int, default=1)
     parser.add_argument('--load', type=str, default='')  # pretrained model
     parser.add_argument('--save_folder', type=str, default='checkpoints/')
@@ -49,10 +49,10 @@ if __name__ == '__main__':
     # Train data
     parser.add_argument('--train_root', type=str, default='./DataRoot/')
     parser.add_argument('--train_list', type=str, default='./DataRoot/train.lst')
-    parser.add_argument('--op', type=str, default='cm', choices=['om', 'o', 'c', 'cm'])
+    parser.add_argument('--op', type=str, default='c', choices=['om', 'o', 'c', 'cm'])
 
     # Testing settings
-    parser.add_argument('--model', type=str, default='checkpoints/demo-18/epoch_25.pth')  # Snapshot
+    parser.add_argument('--model', type=str, default='checkpoints/demo_c/demo-08/epoch_60.pth')  # Snapshot
     parser.add_argument('--test_folder', type=str, default='test/demo-18/')  # Test results saving folder
     parser.add_argument('--test_root', type=str, default='./DataRoot/TEST/origin/')
     parser.add_argument('--test_list', type=str, default='./DataRoot/TEST/origin/test.lst')
