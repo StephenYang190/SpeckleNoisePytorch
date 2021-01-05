@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # Training settings
     parser.add_argument('--epoch', type=int, default=80)
-    parser.add_argument('--batch_size', type=int, default=16)
+    parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--num_thread', type=int, default=1)
     parser.add_argument('--load', type=str, default='')  # pretrained model
     parser.add_argument('--save_folder', type=str, default='checkpoints/')

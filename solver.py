@@ -39,19 +39,19 @@ class Solver(object):
     def build_model(self):
         if self.config.op == 'o':
             from model.SNRo import SNRo
-            self.net = SNRo(in_channels=3, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
+            self.net = SNRo(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
                     alpha_out=0.5, stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
         elif self.config.op == 'om':
             from model.SNRom import SNRom
-            self.net = SNRom(in_channels=3, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
+            self.net = SNRom(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
                     alpha_out=0.5, stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
         elif self.config.op == 'c':
             from model.SNRc import SNRc
-            self.net = SNRc(in_channels=3, hide_channels=64, out_channels=1, kernel_size=3,
+            self.net = SNRc(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3,
                     stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
         else:
             from model.SNRcm import SNRcm
-            self.net = SNRcm(in_channels=3, hide_channels=64, out_channels=1, kernel_size=3,
+            self.net = SNRcm(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3,
                     stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
 
         if self.config.cuda:

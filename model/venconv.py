@@ -1,28 +1,12 @@
 import torch
 import torch.nn as nn
-import math
-
-
-class VenConv(nn.Module):
-    def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1,
-                 groups=1, bias=False):
-        super(VenConv, self).__init__()
-        assert stride == 1 or stride == 2, "Stride should be 1 or 2."
-        self.stride = stride
-        self.is_dw = groups == in_channels        
-        self.conv = nn.Conv2d(int(in_channels), int(out_channels),
-                        kernel_size, 1, padding, dilation, groups, bias)
-        
-
-    def forward(self, x):
-        return self.conv(x)
 
 class Conv_BN(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1,
                  groups=1, bias=False, norm_layer=nn.BatchNorm2d):
         super(Conv_BN, self).__init__()
-        self.conv = VenConv(in_channels, out_channels, kernel_size, stride, padding, dilation,
-                               groups, bias)
+        self.conv = nn.Conv2d(int(in_channels), int(out_channels),
+                        kernel_size, 1, padding, dilation, groups, bias)
         self.bn = norm_layer(out_channels)
         
 

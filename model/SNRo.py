@@ -27,8 +27,11 @@ class SNRo(nn.Module):
                                               alpha_out, stride, padding, dilation, groups) for i in
                                      range(hide_layers * 2))
         # for input
-        self.proin = Conv_BN_ACT(in_channels, hide_channels, kernel_size, 0, alpha_out, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
+        self.downs = nn.AvgPool2d(kernel_size=(2, 2), stride=2)
+        self.proninl = nn.Conv2d(int(in_channels), int(alpha_in * hide_channels),
+                                 kernel_size, 1, padding, dilation, groups, bias)
+        self.proninh = nn.Conv2d(int(in_channels), hide_channels - int(alpha_in * hide_channels),
+                                 kernel_size, 1, padding, dilation, groups, bias)
         # for output
         self.upsample = nn.Upsample(scale_factor=2, mode='nearest')
 
@@ -44,19 +47,21 @@ class SNRo(nn.Module):
 
     def forward(self, x):
 
-        x_h, x_l = self.proin(x)
+        x_l = self.downs(x)
+        x_l = self.actl(self.proninl(x_l))
+        x_h = self.acth(self.proninh(x))
 
         for i in range(self.hide_layers * 2):
             x_h, x_l = self.octavecons[i]((x_h, x_l))
 
             x_h, x_l = self.rescons[i]((x_h, x_l))
 
-        x_l = self.upsample(x_l)
         x_h = self.prouth(x_h)
         x_h = self.acth(x_h)
-        
+
+        x_l = self.upsample(x_l)
         x_l = self.proutl(x_l)
-        x_l = self.actl(x_h)
+        x_l = self.actl(x_l)
         
         output = torch.cat((x_h, x_l), 1)
         output = self.proutc(output)
