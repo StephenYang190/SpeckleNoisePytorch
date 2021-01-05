@@ -80,10 +80,11 @@ def get_loader(config, mode='train', pin=True):
 def load_image(path, image_size):
     if not os.path.exists(path):
         print('File {} not exists'.format(path))
-    im = cv2.imread(path)
+    im = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     in_ = np.array(im, dtype=np.float32)
     in_ = cv2.resize(in_, (image_size, image_size))
     in_ = in_ / 255.0
+    in_ = in_[:, :, np.newaxis]
     return in_
 
 
