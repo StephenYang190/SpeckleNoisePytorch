@@ -72,9 +72,7 @@ class Solver(object):
             print("Proccess :" + name)
             
             with torch.no_grad():
-                if self.config.cuda:
-                    device = torch.device(self.config.device_id)
-                    images = images.to(device)
+                images = images.to(self.device)
 
                 preds = self.net(images)
                 pred = np.squeeze(preds).cpu().data.numpy()
@@ -101,9 +99,6 @@ class Solver(object):
                 if (Noise_img.size(2) != GT_img.size(2)) or (Noise_img.size(3) != GT_img.size(3)):
                     print('IMAGE ERROR, PASSING```')
                     continue
-                if self.config.cuda:
-                    device = torch.device(self.config.device_id)
-                    Noise_img, GT_img = Noise_img.to(device), GT_img.to(device)
 
                 output = self.net(Noise_img)
 

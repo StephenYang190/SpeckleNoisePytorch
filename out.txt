@@ -1,0 +1,121 @@
+\begin{figure}[h]
+\begin{minipage}{0.14/linewidth}
+\centerline{\includegraphics[width=\textwidth]{c0 r0}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c0 r1}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c0 r2}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c0 r3}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c0 r4}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c0 r5}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c0 r6}}
+\vspace{3pt}
+\centerline{}
+\end{minipage}
+\begin{minipage}{0.14/linewidth}
+\centerline{\includegraphics[width=\textwidth]{c1 r0}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c1 r1}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c1 r2}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c1 r3}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c1 r4}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c1 r5}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c1 r6}}
+\vspace{3pt}
+\centerline{}
+\end{minipage}
+\begin{minipage}{0.14/linewidth}
+\centerline{\includegraphics[width=\textwidth]{c2 r0}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c2 r1}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c2 r2}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c2 r3}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c2 r4}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c2 r5}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c2 r6}}
+\vspace{3pt}
+\centerline{}
+\end{minipage}
+\begin{minipage}{0.14/linewidth}
+\centerline{\includegraphics[width=\textwidth]{c3 r0}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c3 r1}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c3 r2}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c3 r3}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c3 r4}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c3 r5}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c3 r6}}
+\vspace{3pt}
+\centerline{}
+\end{minipage}
+\begin{minipage}{0.14/linewidth}
+\centerline{\includegraphics[width=\textwidth]{c4 r0}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c4 r1}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c4 r2}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c4 r3}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c4 r4}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c4 r5}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c4 r6}}
+\vspace{3pt}
+\centerline{}
+\end{minipage}
+\begin{minipage}{0.14/linewidth}
+\centerline{\includegraphics[width=\textwidth]{c5 r0}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c5 r1}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c5 r2}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c5 r3}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c5 r4}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c5 r5}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c5 r6}}
+\vspace{3pt}
+\centerline{}
+\end{minipage}
+\begin{minipage}{0.14/linewidth}
+\centerline{\includegraphics[width=\textwidth]{c6 r0}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c6 r1}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c6 r2}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c6 r3}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c6 r4}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c6 r5}}
+\vspace{3pt}
+\centerline{\includegraphics[width=\textwidth]{c6 r6}}
+\vspace{3pt}
+\centerline{}
+\end{minipage}
+end{figure}
