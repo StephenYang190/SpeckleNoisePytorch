@@ -91,13 +91,14 @@ def load_image(path, image_size):
 def load_image_test(path):
     if not os.path.exists(path):
         print('File {} not exists'.format(path))
-    im = cv2.imread(path)
+    im = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     in_ = np.array(im, dtype=np.float32)
     if in_.shape[0] % 2 != 0:
         in_ = cv2.resize(in_, (in_.shape[1], in_.shape[0] + 1))
     if in_.shape[1] % 2 != 0:
         in_ = cv2.resize(in_, (in_.shape[1] + 1, in_.shape[0]))
-    in_ = Normalization(in_)
+    in_ = in_ / 255.0
+    in_ = in_[:, :, np.newaxis]
     return in_
 
 
