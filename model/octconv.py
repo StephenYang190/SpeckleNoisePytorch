@@ -87,9 +87,9 @@ class ResBlock(nn.Module):
         super(ResBlock, self).__init__()
 
         self.conv1 = Conv_BN_ACT(in_channels, out_channels, kernel_size, alpha_in, alpha_out, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
+                                 padding, dilation, groups, bias, activation_layer=nn.ReLU)
         self.conv2 = Conv_BN_ACT(in_channels, out_channels, kernel_size, alpha_in, alpha_out, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
+                                 padding, dilation, groups, bias, activation_layer=nn.ReLU)
 
     def forward(self, x):
         x_hi, x_li = x

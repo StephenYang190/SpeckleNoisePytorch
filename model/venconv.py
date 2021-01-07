@@ -8,7 +8,6 @@ class Conv_BN(nn.Module):
         self.conv = nn.Conv2d(int(in_channels), int(out_channels),
                         kernel_size, 1, padding, dilation, groups, bias)
         self.bn = norm_layer(out_channels)
-        
 
     def forward(self, x):
         x = self.conv(x)
@@ -37,9 +36,9 @@ class ResBlock(nn.Module):
         super(ResBlock, self).__init__()
 
         self.conv1 = Conv_BN_ACT(in_channels, out_channels, kernel_size, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
+                                 padding, dilation, groups, bias, activation_layer=nn.ReLU)
         self.conv2 = Conv_BN_ACT(in_channels, out_channels, kernel_size, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
+                                 padding, dilation, groups, bias, activation_layer=nn.ReLU)
 
     def forward(self, x):
         x_in = x

@@ -4,9 +4,6 @@ import numpy as np
 import os
 import cv2
 import time
-from torch.utils.tensorboard import SummaryWriter
-
-writer = SummaryWriter('log/run' + time.strftime("%d-%m"))
 
 
 class Solver(object):
@@ -20,7 +17,7 @@ class Solver(object):
         self.build_model()
         if config.mode == 'test':
             print('Loading pre-trained model from %s...' % self.config.model)
-            self.net.load_state_dict(torch.load(self.config.model))
+            self.net.load_state_dict(torch.load(self.config.model, map_location=config.device_id))
             self.net.eval()
         if config.mode == 'train':
             self.net.train()
@@ -113,9 +110,6 @@ class Solver(object):
 
                 if (i + 1) % (iter_num / 20) == 0:
                     print('>', end='', flush=True)
-                    # print('Learning rate: ' + str(self.lr))
-                    writer.add_scalar('training loss', Loss / (self.show_every / self.iter_size),
-                                      epoch * len(self.train_loader.dataset) + i)
 
             time_e = time.time()
             print(' || Loss : %10.4f || Time : %f s' % (TotalLoss / iter_num, time_e - time_s))
