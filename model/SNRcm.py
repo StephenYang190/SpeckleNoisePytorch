@@ -20,7 +20,7 @@ class SNRcm(nn.Module):
         # layers
         self.convs = nn.ModuleList(
             Conv_BN_ACT(hide_channels, hide_channels, kernel_size, stride,
-                        padding, dilation, groups, bias, activation_layer=nn.PReLU) for i in range(hide_layers * 2))
+                        padding, dilation, groups, bias, activation_layer=nn.ReLU) for i in range(hide_layers * 2))
 
         self.rescons = nn.ModuleList(ResBlock(hide_channels, hide_channels, kernel_size,
                                               stride, padding, dilation, groups) for i in range(hide_layers * 2))
@@ -29,10 +29,10 @@ class SNRcm(nn.Module):
                                  padding, dilation, groups, bias, activation_layer=nn.PReLU)
         # for output
         self.prout1 = Conv_BN_ACT(hide_channels, hide_channels, kernel_size, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
+                                 padding, dilation, groups, bias, activation_layer=nn.ReLU)
         
         self.prout2 = Conv_BN_ACT(hide_channels, out_channels, kernel_size, stride,
-                                 padding, dilation, groups, bias, activation_layer=nn.PReLU)
+                                 padding, dilation, groups, bias, activation_layer=nn.ReLU)
 
     def forward(self, x):
 

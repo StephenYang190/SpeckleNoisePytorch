@@ -1,584 +1,479 @@
-2020-12-08 14:53:32.795365: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.6
-2020-12-08 14:53:32.797123: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.6
+nohup: ignoring input
 SNRNetwork
 SNRc(
   (convs): ModuleList(
     (0): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (1): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (2): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (3): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (4): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (5): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (6): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (7): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (8): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (9): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (10): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (11): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (12): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (13): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (14): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (15): Conv_BN_ACT(
       (conv): Conv_BN(
-        (conv): VenConv(
-          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        )
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
         (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
   )
   (rescons): ModuleList(
     (0): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (1): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (2): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (3): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (4): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (5): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (6): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (7): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (8): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (9): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (10): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (11): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (12): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (13): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (14): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
     (15): ResBlock(
       (conv1): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
       (conv2): Conv_BN_ACT(
         (conv): Conv_BN(
-          (conv): VenConv(
-            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-          )
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
           (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         )
-        (act): PReLU(num_parameters=1)
+        (act): ReLU()
       )
     )
   )
   (proin): Conv_BN_ACT(
     (conv): Conv_BN(
-      (conv): VenConv(
-        (conv): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      )
+      (conv): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
     )
     (act): PReLU(num_parameters=1)
   )
   (prout1): Conv_BN_ACT(
     (conv): Conv_BN(
-      (conv): VenConv(
-        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      )
+      (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
     )
-    (act): PReLU(num_parameters=1)
+    (act): ReLU()
   )
   (prout2): Conv_BN_ACT(
     (conv): Conv_BN(
-      (conv): VenConv(
-        (conv): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      )
+      (conv): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
     )
-    (act): PReLU(num_parameters=1)
+    (act): ReLU()
   )
 )
-The number of parameters: 1815093
+The number of parameters: 1813891
 7040
-epoch:  0/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0579 || Time : 140.605336 s
-epoch:  1/80 || /usr/local/lib/python3.6/dist-packages/torch/nn/modules/loss.py:445: UserWarning: Using a target size (torch.Size([16, 3, 128, 128])) that is different to the input size (torch.Size([16, 1, 128, 128])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
-  return F.mse_loss(input, target, reduction=self.reduction)
->>>>>>>>>>>>>>>>>>>> || Loss :     0.0348 || Time : 141.556808 s
-epoch:  2/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0231 || Time : 141.549706 s
-epoch:  3/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0155 || Time : 142.314292 s
-epoch:  4/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0109 || Time : 141.473897 s
-epoch:  5/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0074 || Time : 141.742898 s
-epoch:  6/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0053 || Time : 141.403811 s
-epoch:  7/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0037 || Time : 141.268563 s
-epoch:  8/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 141.756426 s
-epoch:  9/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0039 || Time : 141.445977 s
-epoch: 10/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 141.477862 s
-epoch: 11/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 141.436297 s
-epoch: 12/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 141.807106 s
-epoch: 13/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 141.455831 s
-epoch: 14/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0046 || Time : 140.951766 s
-epoch: 15/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0032 || Time : 141.232039 s
-epoch: 16/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 141.416005 s
-epoch: 17/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 141.083843 s
-epoch: 18/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 141.516465 s
-epoch: 19/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 141.489277 s
-epoch: 20/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 140.944966 s
-epoch: 21/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 141.469205 s
-epoch: 22/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 141.345750 s
-epoch: 23/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 141.461370 s
-epoch: 24/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 141.534693 s
-epoch: 25/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 141.245272 s
-epoch: 26/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 141.210649 s
-epoch: 27/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0033 || Time : 141.321240 s
-epoch: 28/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 141.148899 s
-epoch: 29/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 141.148028 s
-epoch: 30/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 140.919609 s
-epoch: 31/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 141.261045 s
-epoch: 32/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 141.004565 s
-epoch: 33/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 141.304687 s
-epoch: 34/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 141.387162 s
-epoch: 35/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 141.398372 s
-epoch: 36/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 141.243838 s
-epoch: 37/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 141.381212 s
-epoch: 38/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 140.806404 s
-epoch: 39/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 141.408050 s
-epoch: 40/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 141.083477 s
-epoch: 41/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 141.598008 s
-epoch: 42/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 141.989922 s
-epoch: 43/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 141.566155 s
-epoch: 44/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 141.571053 s
-epoch: 45/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 140.787767 s
-epoch: 46/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 140.595464 s
-epoch: 47/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 140.363498 s
-epoch: 48/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 140.422046 s
-epoch: 49/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 140.181511 s
-epoch: 50/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 140.478153 s
-epoch: 51/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 139.991176 s
-epoch: 52/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0016 || Time : 139.366999 s
-epoch: 53/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 139.709183 s
-epoch: 54/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0016 || Time : 139.258288 s
-epoch: 55/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 139.661975 s
-epoch: 56/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 139.638441 s
-epoch: 57/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 139.096894 s
-epoch: 58/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 138.887132 s
-epoch: 59/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 139.364588 s
-epoch: 60/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 138.970485 s
-epoch: 61/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0013 || Time : 138.958361 s
-epoch: 62/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 138.983167 s
-epoch: 63/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 138.073293 s
-epoch: 64/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0016 || Time : 138.320077 s
-epoch: 65/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 139.118397 s
-epoch: 66/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 138.514069 s
-epoch: 67/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 138.685196 s
-epoch: 68/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0013 || Time : 138.803204 s
-epoch: 69/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 138.700269 s
-epoch: 70/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 138.326200 s
-epoch: 71/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0013 || Time : 138.483855 s
-epoch: 72/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0013 || Time : 139.220165 s
-epoch: 73/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 138.112217 s
-epoch: 74/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 138.076945 s
-epoch: 75/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 138.535180 s
-epoch: 76/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 138.793323 s
-epoch: 77/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 139.058040 s
-epoch: 78/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 138.913511 s
-epoch: 79/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 138.586948 s
+epoch:  0/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0127 || Time : 131.705700 s
+epoch:  1/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0032 || Time : 131.919324 s
+epoch:  2/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 132.155559 s
+epoch:  3/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 135.452380 s
+epoch:  4/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0032 || Time : 133.233602 s
+epoch:  5/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 131.758671 s
+epoch:  6/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 131.142265 s
+epoch:  7/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 131.110507 s
+epoch:  8/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 131.148606 s
+epoch:  9/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 131.387029 s
+epoch: 10/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 132.030350 s
+epoch: 11/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 131.723047 s
+epoch: 12/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 134.118590 s
+epoch: 13/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 130.916427 s
+epoch: 14/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 133.966710 s
+epoch: 15/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 131.272620 s
+epoch: 16/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 130.882052 s
+epoch: 17/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 131.216757 s
+epoch: 18/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 130.902177 s
+epoch: 19/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 131.329660 s
+epoch: 20/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 131.873540 s
+epoch: 21/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 130.333348 s
+epoch: 22/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 130.180427 s
+epoch: 23/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 130.190751 s
+epoch: 24/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 133.136258 s
+epoch: 25/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 132.495581 s
+epoch: 26/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 130.162480 s
+epoch: 27/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 130.315518 s
+epoch: 28/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 132.455986 s
+epoch: 29/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 132.983560 s
+epoch: 30/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 130.139777 s
+epoch: 31/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 130.024848 s
+epoch: 32/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 130.350404 s
+epoch: 33/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 130.370618 s
+epoch: 34/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 130.557041 s
+epoch: 35/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 130.342639 s
+epoch: 36/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 130.100103 s
+epoch: 37/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 129.995844 s
+epoch: 38/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 129.409864 s
+epoch: 39/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 129.372890 s
+epoch: 40/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 132.539550 s
+epoch: 41/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 129.135536 s
+epoch: 42/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 129.027711 s
+epoch: 43/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 128.884326 s
+epoch: 44/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 128.731375 s
+epoch: 45/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 128.877391 s
+epoch: 46/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 130.054574 s
+epoch: 47/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 129.006716 s
+epoch: 48/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 128.795086 s
+epoch: 49/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 128.606369 s
+epoch: 50/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 128.625827 s
+epoch: 51/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 128.744263 s
+epoch: 52/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 128.675275 s
+epoch: 53/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 128.796603 s
+epoch: 54/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 128.513168 s
+epoch: 55/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0016 || Time : 128.610203 s
+epoch: 56/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 129.442662 s
+epoch: 57/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 128.502267 s
+epoch: 58/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 128.430621 s
+epoch: 59/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 131.444648 s
+epoch: 60/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 128.451444 s
+epoch: 61/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 129.185066 s
+epoch: 62/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0016 || Time : 132.621332 s
+epoch: 63/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 128.471962 s
+epoch: 64/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0016 || Time : 128.816513 s
+epoch: 65/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 128.690606 s
+epoch: 66/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 128.832424 s
+epoch: 67/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 129.151645 s
+epoch: 68/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 128.440392 s
+epoch: 69/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 128.593702 s
+epoch: 70/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0013 || Time : 128.363351 s
+epoch: 71/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0013 || Time : 129.774338 s
+epoch: 72/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 128.587194 s
+epoch: 73/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0012 || Time : 128.569045 s
+epoch: 74/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0015 || Time : 124.805715 s
+epoch: 75/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 132.259570 s
+epoch: 76/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 128.527216 s
+epoch: 77/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 128.782589 s
+epoch: 78/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0014 || Time : 128.744233 s
+epoch: 79/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0013 || Time : 128.769596 s

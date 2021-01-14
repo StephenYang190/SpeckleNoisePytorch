@@ -1,6 +1,4 @@
 nohup: ignoring input
-2021-01-06 10:38:58.989702: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.6
-2021-01-06 10:38:58.991362: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.6
 SNRNetwork
 SNRom(
   (octavecons): ModuleList(
@@ -15,7 +13,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (1): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -28,7 +26,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (2): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -41,7 +39,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (3): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -54,7 +52,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (4): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -67,7 +65,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (5): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -80,7 +78,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (6): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -93,7 +91,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (7): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -106,7 +104,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (8): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -119,7 +117,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (9): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -132,7 +130,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (10): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -145,7 +143,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (11): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -158,7 +156,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (12): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -171,7 +169,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (13): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -184,7 +182,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (14): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -197,7 +195,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
     (15): Conv_BN_ACT(
       (conv): OctaveConv(
@@ -210,7 +208,7 @@ SNRom(
       )
       (bn_h): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (bn_l): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (act): PReLU(num_parameters=1)
+      (act): ReLU()
     )
   )
   (rescons): ModuleList(
@@ -666,92 +664,90 @@ SNRom(
   (downs): AvgPool2d(kernel_size=(2, 2), stride=2, padding=0)
   (proninl): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
   (proninh): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (actli): PReLU(num_parameters=1)
-  (acthi): PReLU(num_parameters=1)
   (prouth): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (acth): ReLU()
   (proutc): Conv2d(1, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (actc): ReLU()
+  (actPReLU): PReLU(num_parameters=1)
+  (actReLU): ReLU()
 )
-The number of parameters: 1776539
+The number of parameters: 1776522
 7040
-epoch:  0/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0160 || Time : 349.900703 s
-epoch:  1/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0044 || Time : 350.273418 s
-epoch:  2/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0036 || Time : 350.683392 s
-epoch:  3/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0033 || Time : 350.023342 s
-epoch:  4/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0032 || Time : 351.123509 s
-epoch:  5/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 352.357017 s
-epoch:  6/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0031 || Time : 355.283851 s
-epoch:  7/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 362.038894 s
-epoch:  8/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 359.477847 s
-epoch:  9/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0031 || Time : 365.162817 s
-epoch: 10/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 364.234523 s
-epoch: 11/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 362.677656 s
-epoch: 12/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 363.941851 s
-epoch: 13/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 365.784795 s
-epoch: 14/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 365.166829 s
-epoch: 15/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 365.241147 s
-epoch: 16/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 364.024004 s
-epoch: 17/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 365.825492 s
-epoch: 18/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 364.937978 s
-epoch: 19/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 365.399129 s
-epoch: 20/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 368.511937 s
-epoch: 21/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 370.391566 s
-epoch: 22/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 372.954516 s
-epoch: 23/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 369.675988 s
-epoch: 24/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0038 || Time : 374.240200 s
-epoch: 25/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 373.975574 s
-epoch: 26/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 376.151288 s
-epoch: 27/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 375.672159 s
-epoch: 28/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 374.194552 s
-epoch: 29/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 374.121393 s
-epoch: 30/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 373.808389 s
-epoch: 31/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 376.066833 s
-epoch: 32/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0053 || Time : 384.477073 s
-epoch: 33/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0031 || Time : 383.218201 s
-epoch: 34/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 381.431028 s
-epoch: 35/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 381.376363 s
-epoch: 36/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 381.106528 s
-epoch: 37/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 383.220592 s
-epoch: 38/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 382.146272 s
-epoch: 39/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 382.884187 s
-epoch: 40/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 382.229041 s
-epoch: 41/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 382.414617 s
-epoch: 42/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 383.713262 s
-epoch: 43/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 382.027147 s
-epoch: 44/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 382.623104 s
-epoch: 45/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 383.823017 s
-epoch: 46/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 385.421393 s
-epoch: 47/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 384.602136 s
-epoch: 48/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 383.371495 s
-epoch: 49/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 383.089713 s
-epoch: 50/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 383.064936 s
-epoch: 51/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 382.555920 s
-epoch: 52/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 383.462546 s
-epoch: 53/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 383.646330 s
-epoch: 54/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 386.815737 s
-epoch: 55/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 388.369611 s
-epoch: 56/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 388.065355 s
-epoch: 57/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 387.532630 s
-epoch: 58/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 387.004943 s
-epoch: 59/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 386.516250 s
-epoch: 60/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 388.151669 s
-epoch: 61/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 389.860441 s
-epoch: 62/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 388.638245 s
-epoch: 63/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 390.021227 s
-epoch: 64/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 391.373791 s
-epoch: 65/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 394.529887 s
-epoch: 66/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 398.461709 s
-epoch: 67/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 402.355908 s
-epoch: 68/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 406.698858 s
-epoch: 69/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 414.005763 s
-epoch: 70/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 419.469142 s
-epoch: 71/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0017 || Time : 425.667239 s
-epoch: 72/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0018 || Time : 429.001173 s
-epoch: 73/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0021 || Time : 432.114045 s
-epoch: 74/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 427.106050 s
-epoch: 75/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0020 || Time : 432.914894 s
-epoch: 76/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 435.897516 s
-epoch: 77/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 436.400688 s
-epoch: 78/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 436.279482 s
-epoch: 79/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0019 || Time : 436.204171 s
+epoch:  0/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0889 || Time : 446.185193 s
+epoch:  1/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0474 || Time : 444.509615 s
+epoch:  2/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0059 || Time : 443.657247 s
+epoch:  3/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0046 || Time : 443.343288 s
+epoch:  4/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0043 || Time : 442.999964 s
+epoch:  5/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0040 || Time : 442.898277 s
+epoch:  6/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0037 || Time : 443.623208 s
+epoch:  7/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0034 || Time : 442.709920 s
+epoch:  8/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 443.332395 s
+epoch:  9/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 442.248732 s
+epoch: 10/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 442.540017 s
+epoch: 11/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 442.361187 s
+epoch: 12/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 442.634827 s
+epoch: 13/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 442.847287 s
+epoch: 14/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 442.999537 s
+epoch: 15/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 443.048086 s
+epoch: 16/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 444.300261 s
+epoch: 17/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 443.037946 s
+epoch: 18/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 444.464489 s
+epoch: 19/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 444.578592 s
+epoch: 20/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0034 || Time : 444.282645 s
+epoch: 21/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 445.824763 s
+epoch: 22/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 445.306082 s
+epoch: 23/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 441.389083 s
+epoch: 24/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 441.031524 s
+epoch: 25/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 445.328940 s
+epoch: 26/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 440.411829 s
+epoch: 27/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0033 || Time : 443.677402 s
+epoch: 28/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 439.872633 s
+epoch: 29/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 437.285440 s
+epoch: 30/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 440.309263 s
+epoch: 31/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 436.680873 s
+epoch: 32/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 437.303611 s
+epoch: 33/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 436.342354 s
+epoch: 34/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 435.623542 s
+epoch: 35/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0034 || Time : 437.561103 s
+epoch: 36/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 435.781834 s
+epoch: 37/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 437.105602 s
+epoch: 38/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0039 || Time : 441.050442 s
+epoch: 39/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0034 || Time : 441.641790 s
+epoch: 40/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0030 || Time : 438.117396 s
+epoch: 41/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 437.460306 s
+epoch: 42/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 437.100657 s
+epoch: 43/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 436.730988 s
+epoch: 44/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0027 || Time : 436.986227 s
+epoch: 45/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 437.533514 s
+epoch: 46/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 436.795597 s
+epoch: 47/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0033 || Time : 438.280665 s
+epoch: 48/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0029 || Time : 438.471357 s
+epoch: 49/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 436.705421 s
+epoch: 50/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 436.656778 s
+epoch: 51/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 435.864942 s
+epoch: 52/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 435.358729 s
+epoch: 53/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 437.212878 s
+epoch: 54/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 434.656585 s
+epoch: 55/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 434.294461 s
+epoch: 56/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 434.191866 s
+epoch: 57/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0028 || Time : 436.126696 s
+epoch: 58/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 433.720219 s
+epoch: 59/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 433.101981 s
+epoch: 60/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0026 || Time : 432.370713 s
+epoch: 61/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 432.102641 s
+epoch: 62/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 431.346463 s
+epoch: 63/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 431.399632 s
+epoch: 64/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 432.749621 s
+epoch: 65/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 431.547065 s
+epoch: 66/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 432.808366 s
+epoch: 67/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 430.533528 s
+epoch: 68/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 429.960593 s
+epoch: 69/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 429.597100 s
+epoch: 70/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0025 || Time : 431.291355 s
+epoch: 71/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 431.483411 s
+epoch: 72/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 431.150789 s
+epoch: 73/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 431.760849 s
+epoch: 74/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0024 || Time : 432.667307 s
+epoch: 75/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0023 || Time : 435.859951 s
+epoch: 76/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 434.547691 s
+epoch: 77/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 434.084844 s
+epoch: 78/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 434.143058 s
+epoch: 79/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0022 || Time : 433.987900 s
