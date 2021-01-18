@@ -16,9 +16,10 @@ class Solver(object):
         self.device = torch.device(config.device_id) if torch.cuda.is_available() else torch.device("cpu")
         self.build_model()
         if config.mode == 'test':
-            print('Loading pre-trained model from %s...' % self.config.model)
-            self.net.load_state_dict(torch.load(self.config.model, map_location=config.device_id))
-            self.net.eval()
+            # print('Loading pre-trained model from %s...' % self.config.model)
+            # self.net.load_state_dict(torch.load(self.config.model, map_location=config.device_id))
+            # self.net.eval()
+            pass
         if config.mode == 'train':
             self.net.train()
 
@@ -38,18 +39,22 @@ class Solver(object):
             from model.SNRo import SNRo
             self.net = SNRo(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
                     alpha_out=0.5, stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
+            self.testFolder = 'DenoiseResult-o/sythetics'
         elif self.config.op == 'om':
             from model.SNRom import SNRom
             self.net = SNRom(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
                     alpha_out=0.5, stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
+            self.testFolder = 'DenoiseResult-om/sythetics'
         elif self.config.op == 'c':
             from model.SNRc import SNRc
             self.net = SNRc(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3,
                     stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
+            self.testFolder = 'DenoiseResult-c/sythetics'
         else:
             from model.SNRcm import SNRcm
             self.net = SNRcm(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3,
                     stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
+            self.testFolder = 'DenoiseResult-cm/sythetics'
 
         if self.config.cuda:
             self.net.to(self.device)
@@ -62,24 +67,36 @@ class Solver(object):
         self.print_network(self.net, 'SNRNetwork')
 
     def test(self):
-        time_s = time.time()
-        img_num = len(self.test_loader)
-        for i, data_batch in enumerate(self.test_loader):
-            images, name = data_batch['image'], data_batch['name'][0]
-            print("Proccess :" + name)
-            
-            with torch.no_grad():
-                images = images.to(self.device)
+        checkpoints = os.listdir(self.config.model)
+        for checkpoint in checkpoints:
+            if checkpoint == 'final.pth':
+                continue
+            iternum = checkpoint.split('_')[1].split('.')[0]
+            outdir = os.path.join(self.config.test_folder, self.testFolder, iternum)
+            if not os.path.exists(outdir):
+                os.makedirs(outdir)
+            print('Loading pre-trained model from %s...' % checkpoint)
+            self.net.load_state_dict(torch.load(os.path.join(self.config.model, checkpoint), map_location=self.config.device_id))
+            self.net.eval()
 
-                preds = self.net(images)
-                pred = np.squeeze(preds).cpu().data.numpy()
-                pred = pred * 255.0
-                
-                filename = os.path.join(self.config.test_folder, name[:-4] + '_denoise.png')
-                cv2.imwrite(filename, pred)
+            time_s = time.time()
+            img_num = len(self.test_loader)
+            for i, data_batch in enumerate(self.test_loader):
+                images, name = data_batch['image'], data_batch['name'][0]
+                print("Proccess :" + name)
 
-        time_e = time.time()
-        print('Speed: %f FPS' % (img_num / (time_e - time_s)))
+                with torch.no_grad():
+                    images = images.to(self.device)
+
+                    preds = self.net(images)
+                    pred = np.squeeze(preds).cpu().data.numpy()
+                    pred = pred * 255.0
+
+                    filename = os.path.join(outdir, name[:-4] + '_' + self.config.op + '_denoise.png')
+                    cv2.imwrite(filename, pred)
+
+            time_e = time.time()
+            print('Speed: %f FPS' % (img_num / (time_e - time_s)))
         print('Test Done!')
 
     # training phase

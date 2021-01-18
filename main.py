@@ -53,9 +53,9 @@ if __name__ == '__main__':
 
     # Testing settings
     parser.add_argument('--model', type=str, default='checkpoints/demo_c/demo-08/epoch_60.pth')  # Snapshot
-    parser.add_argument('--test_folder', type=str, default='test/demo-18/')  # Test results saving folder
-    parser.add_argument('--test_root', type=str, default='./DataRoot/TEST/origin/')
-    parser.add_argument('--test_list', type=str, default='./DataRoot/TEST/origin/test.lst')
+    parser.add_argument('--test_folder', type=str, default='test/')  # Test results saving folder
+    parser.add_argument('--test_root', type=str, default='/home/yang/workspace/speckle/DataRoot/TEST/sythetics/a001/')
+    parser.add_argument('--test_list', type=str, default='/home/yang/workspace/speckle/DataRoot/TEST/sythetics/test.lst')
 
     # Misc
     parser.add_argument('--mode', type=str, default='train', choices=['train', 'test'])
