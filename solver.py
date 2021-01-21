@@ -114,11 +114,15 @@ class Solver(object):
                     print('IMAGE ERROR, PASSING```')
                     continue
 
-                output = self.net(Noise_img)
+                output, x_l = self.net(Noise_img)
 
                 loss_fun = nn.MSELoss()
-                Loss = loss_fun(output, GT_img)
-                TotalLoss += Loss
+                downs = nn.AvgPool2d(kernel_size=(2, 2), stride=2)
+                LossH = loss_fun(output, GT_img)
+                LossL = loss_fun(x_l, downs(GT_img))
+                Loss = LossH + LossL
+
+                TotalLoss += LossH
                 Loss.backward()
                 
                 self.optimizer.step()
