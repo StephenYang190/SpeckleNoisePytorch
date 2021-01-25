@@ -8,11 +8,12 @@ import time
 def main(config):
     if config.mode == 'train':
         train_loader = get_loader(config)
+        vail_loader = get_loader(config, mode='vail')
 
         if not os.path.exists("%s/demo-%s" % (config.save_folder, time.strftime("%d"))):
             os.mkdir("%s/demo-%s" % (config.save_folder, time.strftime("%d")))
         config.save_folder = "%s/demo-%s" % (config.save_folder, time.strftime("%d"))
-        train = Solver(train_loader, None, config)
+        train = Solver(train_loader, vail_loader, config)
         train.train()
     elif config.mode == 'test':
         test_loader = get_loader(config, mode='test')
@@ -47,15 +48,17 @@ if __name__ == '__main__':
     parser.add_argument('--show_every', type=int, default=50)
 
     # Train data
-    parser.add_argument('--train_root', type=str, default='./DataRoot/')
-    parser.add_argument('--train_list', type=str, default='./DataRoot/train.lst')
+    parser.add_argument('--train_root', type=str, default='../DataRoot/')
+    parser.add_argument('--train_list', type=str, default='../DataRoot/train.lst')
+    parser.add_argument('--vail_root', type=str, default='../DataRoot/')
+    parser.add_argument('--vail_list', type=str, default='../DataRoot/vail.lst')
     parser.add_argument('--op', type=str, default='om', choices=['om', 'o', 'c', 'cm'])
 
     # Testing settings
-    parser.add_argument('--model', type=str, default='checkpoints/omcheck/demo-21/epoch_60.pth')  # Snapshot
+    parser.add_argument('--model', type=str, default='checkpoints/cmcheck/demo-08/epoch_80.pth')  # Snapshot
     parser.add_argument('--test_folder', type=str, default='../test/')  # Test results saving folder
-    parser.add_argument('--test_root', type=str, default='../DataRoot/TEST/origin/')
-    parser.add_argument('--test_list', type=str, default='../DataRoot/TEST/origin/test.lst')
+    parser.add_argument('--test_root', type=str, default='../DataRoot/TEST/sythetics/a005')
+    parser.add_argument('--test_list', type=str, default='../DataRoot/TEST/sythetics/test.lst')
 
     # Misc
     parser.add_argument('--mode', type=str, default='train', choices=['train', 'test'])

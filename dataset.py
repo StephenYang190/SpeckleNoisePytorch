@@ -70,6 +70,10 @@ def get_loader(config, mode='train', pin=True):
         dataset = ImageDataTrain(config.train_root, config.train_list, config.image_size, config.device_id)
         data_loader = data.DataLoader(dataset=dataset, batch_size=config.batch_size, shuffle=shuffle,
                                       num_workers=config.num_thread, pin_memory=pin)
+    elif mode == 'vail':
+        dataset = ImageDataTrain(config.vail_root, config.vail_list, config.image_size, config.device_id)
+        data_loader = data.DataLoader(dataset=dataset, batch_size=1, shuffle=shuffle,
+                                      num_workers=config.num_thread, pin_memory=pin)
     else:
         dataset = ImageDataTest(config.test_root, config.test_list)
         data_loader = data.DataLoader(dataset=dataset, batch_size=1, shuffle=shuffle,

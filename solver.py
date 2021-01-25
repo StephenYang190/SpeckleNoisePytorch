@@ -4,6 +4,7 @@ import numpy as np
 import os
 import cv2
 import time
+import pytorch_ssim
 
 
 class Solver(object):
@@ -16,12 +17,9 @@ class Solver(object):
         self.device = torch.device(config.device_id) if torch.cuda.is_available() else torch.device("cpu")
         self.build_model()
         if config.mode == 'test':
-            # print('Loading pre-trained model from %s...' % self.config.model)
-            # self.net.load_state_dict(torch.load(self.config.model, map_location=config.device_id))
-            # self.net.eval()
-            pass
-        if config.mode == 'train':
-            self.net.train()
+            print('Loading pre-trained model from %s...' % self.config.model)
+            self.net.load_state_dict(torch.load(self.config.model, map_location=config.device_id))
+            self.net.eval()
 
 
     # print the network information and parameter numbers
@@ -67,46 +65,38 @@ class Solver(object):
         self.print_network(self.net, 'SNRNetwork')
 
     def test(self):
-        checkpoints = os.listdir(self.config.model)
-        for checkpoint in checkpoints:
-            if checkpoint == 'final.pth':
-                continue
-            iternum = checkpoint.split('_')[1].split('.')[0]
-            outdir = os.path.join(self.config.test_folder, self.testFolder, iternum)
-            if not os.path.exists(outdir):
-                os.makedirs(outdir)
-            print('Loading pre-trained model from %s...' % checkpoint)
-            self.net.load_state_dict(torch.load(os.path.join(self.config.model, checkpoint), map_location=self.config.device_id))
-            self.net.eval()
+        outdir = os.path.join(self.config.test_folder, self.testFolder)
+        time_s = time.time()
+        img_num = len(self.test_loader)
+        for i, data_batch in enumerate(self.test_loader):
+            images, name = data_batch['image'], data_batch['name'][0]
+            print("Proccess :" + name)
 
-            time_s = time.time()
-            img_num = len(self.test_loader)
-            for i, data_batch in enumerate(self.test_loader):
-                images, name = data_batch['image'], data_batch['name'][0]
-                print("Proccess :" + name)
+            with torch.no_grad():
+                images = images.to(self.device)
 
-                with torch.no_grad():
-                    images = images.to(self.device)
+                preds = self.net(images)
+                pred = np.squeeze(preds).cpu().data.numpy()
+                pred = pred * 255.0
 
-                    preds = self.net(images)
-                    pred = np.squeeze(preds).cpu().data.numpy()
-                    pred = pred * 255.0
+                filename = os.path.join(outdir, name[:-4] + '_' + self.config.op + '_denoise.png')
+                cv2.imwrite(filename, pred)
 
-                    filename = os.path.join(outdir, name[:-4] + '_' + self.config.op + '_denoise.png')
-                    cv2.imwrite(filename, pred)
-
-            time_e = time.time()
-            print('Speed: %f FPS' % (img_num / (time_e - time_s)))
+        time_e = time.time()
+        print('Speed: %f FPS' % (img_num / (time_e - time_s)))
         print('Test Done!')
 
     # training phase
     def train(self):
         iter_num = len(self.train_loader.dataset) // self.config.batch_size
-        print(len(self.train_loader.dataset))
+        vali_num = len(self.test_loader)
+        MaxSSIM = 0
         self.optimizer.zero_grad()
+
         for epoch in range(self.config.epoch):
             TotalLoss = 0
             time_s = time.time()
+            self.net.train()
             print("epoch: %2d/%2d || " % (epoch, self.config.epoch), end='')
             for i, data_batch in enumerate(self.train_loader):
                 Noise_img, GT_img = data_batch['data_image'].to(self.device), data_batch['data_label'].to(self.device)
@@ -129,9 +119,24 @@ class Solver(object):
                     print('>', end='', flush=True)
 
             time_e = time.time()
-            print(' || Loss : %10.4f || Time : %f s' % (TotalLoss / iter_num, time_e - time_s))
-            if (epoch + 1) % self.config.epoch_save == 0:
+
+            self.net.eval()
+            SSIM = 0
+            ssimloss = pytorch_ssim.SSIM(window_size=11)
+            for i, data_batch in enumerate(self.test_loader):
+                with torch.no_grad():
+                    Noise_img, GT_img = data_batch['data_image'].to(self.device), data_batch['data_label'].to(self.device)
+                    if (Noise_img.size(2) != GT_img.size(2)) or (Noise_img.size(3) != GT_img.size(3)):
+                        print('IMAGE ERROR, PASSING```')
+                        continue
+
+                    output = self.net(Noise_img)
+                    SSIM += ssimloss(output, GT_img)
+            print(' || Loss : %10.4f || SSIM : %10.4f || Time : %f s' % (TotalLoss / iter_num, SSIM / vali_num, time_e - time_s))
+            if SSIM > MaxSSIM:
+                MaxSSIM = SSIM
                 torch.save(self.net.state_dict(), '%s/epoch_%d.pth' % (self.config.save_folder, epoch + 1))
+
 
         # save model
         torch.save(self.net.state_dict(), '%s/final.pth' % self.config.save_folder)
