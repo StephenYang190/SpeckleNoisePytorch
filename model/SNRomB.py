@@ -60,9 +60,6 @@ class SNRom(nn.Module):
                                 kernel_size, 1, padding, dilation, math.ceil(alpha_in * groups), bias)
         self.proutc = nn.Conv2d(out_channels, out_channels,
                                  kernel_size, 1, padding, dilation, math.ceil(alpha_in * groups), bias)
-
-        self.proutl = nn.Conv2d(int(alpha_in * hide_channels), out_channels,
-                                kernel_size, 1, padding, dilation, math.ceil(alpha_in * groups), bias)
         # activate layers
         self.actPReLU = nn.PReLU()
         self.actReLU = nn.ReLU()
@@ -88,7 +85,4 @@ class SNRom(nn.Module):
         output = self.proutc(x_h)
         output = self.actReLU(output)
 
-        x_l = self.proutl(x_l)
-        x_l = self.actReLU(x_l)
-
-        return output, x_l
+        return output

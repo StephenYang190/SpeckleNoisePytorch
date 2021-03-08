@@ -75,7 +75,7 @@ class Solver(object):
             with torch.no_grad():
                 images = images.to(self.device)
 
-                preds, _ = self.net(images)
+                preds = self.net(images)
                 pred = np.squeeze(preds).cpu().data.numpy()
                 pred = pred * 255.0
 
@@ -90,8 +90,7 @@ class Solver(object):
     def train(self):
         iter_num = len(self.train_loader.dataset) // self.config.batch_size
         vali_num = len(self.test_loader)
-        Maxvailoss = 100
-        down = nn.AvgPool2d(kernel_size=(2, 2), stride=2)
+        MaxSSIM = 0
         self.optimizer.zero_grad()
 
         for epoch in range(self.config.epoch):
@@ -105,10 +104,10 @@ class Solver(object):
                     print('IMAGE ERROR, PASSING```')
                     continue
 
-                output, low = self.net(Noise_img)
+                output = self.net(Noise_img)
 
                 loss_fun = nn.MSELoss()
-                Loss = loss_fun(output, GT_img) + 4 * loss_fun(low, down(GT_img))
+                Loss = loss_fun(output, GT_img)
                 TotalLoss += Loss
                 Loss.backward()
                 
@@ -122,8 +121,8 @@ class Solver(object):
             time_e = time.time()
 
             self.net.eval()
-            vailoss = 0
-            loss_fun = nn.MSELoss()
+            SSIM = 0
+            ssimloss = pytorch_ssim.SSIM(window_size=11)
             for i, data_batch in enumerate(self.test_loader):
                 with torch.no_grad():
                     Noise_img, GT_img = data_batch['data_image'].to(self.device), data_batch['data_label'].to(self.device)
@@ -131,11 +130,11 @@ class Solver(object):
                         print('IMAGE ERROR, PASSING```')
                         continue
 
-                    output, _ = self.net(Noise_img)
-                    vailoss += loss_fun(output, GT_img)
-            print(' || Loss : %10.4f || vailoss : %10.4f || Time : %f s' % (TotalLoss / iter_num, vailoss / vali_num, time_e - time_s))
-            if vailoss < Maxvailoss:
-                Maxvailoss = vailoss
+                    output = self.net(Noise_img)
+                    SSIM += ssimloss(output, GT_img)
+            print(' || Loss : %10.4f || SSIM : %10.4f || Time : %f s' % (TotalLoss / iter_num, SSIM / vali_num, time_e - time_s))
+            if SSIM > MaxSSIM:
+                MaxSSIM = SSIM
                 torch.save(self.net.state_dict(), '%s/epoch_%d.pth' % (self.config.save_folder, epoch + 1))
 
 
