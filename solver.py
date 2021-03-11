@@ -66,6 +66,8 @@ class Solver(object):
 
     def test(self):
         outdir = os.path.join(self.config.test_folder, self.testFolder)
+        if not os.path.exists(outdir):
+            os.makedirs(outdir)
         time_s = time.time()
         img_num = len(self.test_loader)
         for i, data_batch in enumerate(self.test_loader):

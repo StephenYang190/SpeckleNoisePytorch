@@ -55,7 +55,7 @@ if __name__ == '__main__':
     parser.add_argument('--op', type=str, default='om', choices=['om', 'o', 'c', 'cm'])
 
     # Testing settings
-    parser.add_argument('--model', type=str, default='checkpoints/cmcheck/demo-08/epoch_80.pth')  # Snapshot
+    parser.add_argument('--model', type=str, default='checkpoints/omcheck/bnLoss/epoch_26.pth')  # Snapshot
     parser.add_argument('--test_folder', type=str, default='../test/')  # Test results saving folder
     parser.add_argument('--test_root', type=str, default='../DataRoot/TEST/sythetics/a005')
     parser.add_argument('--test_list', type=str, default='../DataRoot/TEST/sythetics/test.lst')
