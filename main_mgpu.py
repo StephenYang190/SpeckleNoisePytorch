@@ -1,7 +1,7 @@
 import argparse
 import os
 from dataset import get_loader
-from solver import Solver
+from solver_mgpu import Solver
 import time
 
 

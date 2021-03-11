@@ -13,7 +13,6 @@ class Solver(object):
         self.test_loader = test_loader
         self.config = config
         self.iter_size = config.iter_size
-        self.show_every = config.show_every
         self.device = torch.device(config.device_id) if torch.cuda.is_available() else torch.device("cpu")
         self.build_model()
         if config.mode == 'test':
