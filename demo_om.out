@@ -662,92 +662,122 @@ SNRom(
     )
   )
   (downs): AvgPool2d(kernel_size=(2, 2), stride=2, padding=0)
-  (proninl): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (proninh): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (prouth): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (proutc): Conv2d(1, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (proutl): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-  (actPReLU): PReLU(num_parameters=1)
-  (actReLU): ReLU()
-)
-The number of parameters: 1776810
-epoch:  0/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.1787 || vailoss :     0.0927 || Time : 449.025313 s
-epoch:  1/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.1022 || vailoss :     0.0819 || Time : 448.695541 s
-epoch:  2/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0299 || vailoss :     0.0084 || Time : 448.486089 s
-epoch:  3/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0129 || vailoss :     0.0077 || Time : 448.564389 s
-epoch:  4/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0112 || vailoss :     0.0076 || Time : 448.218379 s
-epoch:  5/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0128 || vailoss :     0.0066 || Time : 446.785718 s
-epoch:  6/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0105 || vailoss :     0.0063 || Time : 446.627403 s
-epoch:  7/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0096 || vailoss :     0.0061 || Time : 446.584994 s
-epoch:  8/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0085 || vailoss :     0.0059 || Time : 446.795947 s
-epoch:  9/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0084 || vailoss :     0.0058 || Time : 446.281292 s
-epoch: 10/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0111 || vailoss :     0.0057 || Time : 446.128639 s
-epoch: 11/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0091 || vailoss :     0.0054 || Time : 446.149887 s
-epoch: 12/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0100 || vailoss :     0.0055 || Time : 445.365074 s
-epoch: 13/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0115 || vailoss :     0.0057 || Time : 444.506477 s
-epoch: 14/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0100 || vailoss :     0.0055 || Time : 443.725715 s
-epoch: 15/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0097 || vailoss :     0.0054 || Time : 443.815909 s
-epoch: 16/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0087 || vailoss :     0.0049 || Time : 444.110451 s
-epoch: 17/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0085 || vailoss :     0.0053 || Time : 443.629616 s
-epoch: 18/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0077 || vailoss :     0.0047 || Time : 443.418894 s
-epoch: 19/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0085 || vailoss :     0.0049 || Time : 443.694155 s
-epoch: 20/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0078 || vailoss :     0.0047 || Time : 442.945216 s
-epoch: 21/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0083 || vailoss :     0.0053 || Time : 443.592427 s
-epoch: 22/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0080 || vailoss :     0.0053 || Time : 443.864518 s
-epoch: 23/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0073 || vailoss :     0.0051 || Time : 443.291850 s
-epoch: 24/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0074 || vailoss :     0.0045 || Time : 442.997942 s
-epoch: 25/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0075 || vailoss :     0.0045 || Time : 442.833326 s
-epoch: 26/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0064 || vailoss :     0.0047 || Time : 442.635430 s
-epoch: 27/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0065 || vailoss :     0.0046 || Time : 442.875719 s
-epoch: 28/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0096 || vailoss :     0.0070 || Time : 441.864313 s
-epoch: 29/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0089 || vailoss :     0.0055 || Time : 439.789997 s
-epoch: 30/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0080 || vailoss :     0.0049 || Time : 438.452123 s
-epoch: 31/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0083 || vailoss :     0.0066 || Time : 440.341074 s
-epoch: 32/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0081 || vailoss :     0.0053 || Time : 441.174595 s
-epoch: 33/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0078 || vailoss :     0.0045 || Time : 440.620885 s
-epoch: 34/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0074 || vailoss :     0.0046 || Time : 440.283130 s
-epoch: 35/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0065 || vailoss :     0.0046 || Time : 439.983902 s
-epoch: 36/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0078 || vailoss :     0.0055 || Time : 440.055962 s
-epoch: 37/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0080 || vailoss :     0.0063 || Time : 439.995025 s
-epoch: 38/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0066 || vailoss :     0.0048 || Time : 439.314995 s
-epoch: 39/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0071 || vailoss :     0.0052 || Time : 439.549599 s
-epoch: 40/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0086 || vailoss :     0.0045 || Time : 439.233892 s
-epoch: 41/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0073 || vailoss :     0.0049 || Time : 438.967418 s
-epoch: 42/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0043 || Time : 439.644099 s
-epoch: 43/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0055 || vailoss :     0.0046 || Time : 439.789129 s
-epoch: 44/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0064 || Time : 439.952776 s
-epoch: 45/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0061 || vailoss :     0.0043 || Time : 440.020690 s
-epoch: 46/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0064 || vailoss :     0.0043 || Time : 440.803565 s
-epoch: 47/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0059 || vailoss :     0.0043 || Time : 439.884699 s
-epoch: 48/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0063 || vailoss :     0.0044 || Time : 440.113916 s
-epoch: 49/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0056 || vailoss :     0.0044 || Time : 439.928902 s
-epoch: 50/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0050 || vailoss :     0.0045 || Time : 439.782948 s
-epoch: 51/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0061 || vailoss :     0.0045 || Time : 439.081942 s
-epoch: 52/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0052 || vailoss :     0.0040 || Time : 439.171032 s
-epoch: 53/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0051 || vailoss :     0.0040 || Time : 439.032745 s
-epoch: 54/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0049 || vailoss :     0.0047 || Time : 438.582225 s
-epoch: 55/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0054 || vailoss :     0.0041 || Time : 438.826820 s
-epoch: 56/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0052 || vailoss :     0.0039 || Time : 439.250388 s
-epoch: 57/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0047 || vailoss :     0.0047 || Time : 439.038274 s
-epoch: 58/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0055 || vailoss :     0.0049 || Time : 439.756709 s
-epoch: 59/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0043 || vailoss :     0.0038 || Time : 442.413249 s
-epoch: 60/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0045 || vailoss :     0.0041 || Time : 444.145677 s
-epoch: 61/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0048 || vailoss :     0.0045 || Time : 446.108496 s
-epoch: 62/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0050 || vailoss :     0.0039 || Time : 448.376551 s
-epoch: 63/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0046 || vailoss :     0.0039 || Time : 447.380138 s
-epoch: 64/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0042 || vailoss :     0.0038 || Time : 447.372048 s
-epoch: 65/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0045 || vailoss :     0.0039 || Time : 447.631441 s
-epoch: 66/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0047 || vailoss :     0.0041 || Time : 447.881152 s
-epoch: 67/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0047 || vailoss :     0.0590 || Time : 447.401695 s
-epoch: 68/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0076 || vailoss :     0.0056 || Time : 447.518475 s
-epoch: 69/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0054 || vailoss :     0.0043 || Time : 447.501314 s
-epoch: 70/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0049 || vailoss :     0.0038 || Time : 448.069270 s
-epoch: 71/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0043 || vailoss :     0.0038 || Time : 447.730036 s
-epoch: 72/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0043 || vailoss :     0.0039 || Time : 447.665261 s
-epoch: 73/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0044 || vailoss :     0.0038 || Time : 447.699335 s
-epoch: 74/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0045 || vailoss :     0.0040 || Time : 446.836088 s
-epoch: 75/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0041 || vailoss :     0.0036 || Time : 447.276827 s
-epoch: 76/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0041 || vailoss :     0.0038 || Time : 447.089993 s
-epoch: 77/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0040 || vailoss :     0.0039 || Time : 446.694452 s
-epoch: 78/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0038 || vailoss :     0.0038 || Time : 446.732122 s
-epoch: 79/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0043 || vailoss :     0.0040 || Time : 446.968060 s
+  (proninl): Conv_BN_ACT(
+    (conv): Conv_BN(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (act): PReLU(num_parameters=1)
+  )
+  (proninh): Conv_BN_ACT(
+    (conv): Conv_BN(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (act): PReLU(num_parameters=1)
+  )
+  (proutl): Conv_BN_ACT(
+    (conv): Conv_BN(
+      (conv): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (act): ReLU()
+  )
+  (prouth): Conv_BN_ACT(
+    (conv): Conv_BN(
+      (conv): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (act): ReLU()
+  )
+  (proutc): Conv_BN_ACT(
+    (conv): Conv_BN(
+      (conv): Conv2d(1, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (act): ReLU()
+  )
+)2021-05-27 22:10:55.094368: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.6
+2021-05-27 22:10:55.101727: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.6
+
+The number of parameters: 1776945
+epoch:  0/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0635 || vailoss :     0.0120 || Time : 453.495921 s
+epoch:  1/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0205 || vailoss :     0.0091 || Time : 454.275756 s
+epoch:  2/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0158 || vailoss :     0.0080 || Time : 450.742332 s
+epoch:  3/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0152 || vailoss :     0.0078 || Time : 449.765800 s
+epoch:  4/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0126 || vailoss :     0.0076 || Time : 449.955394 s
+epoch:  5/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0117 || vailoss :     0.0064 || Time : 449.090296 s
+epoch:  6/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0111 || vailoss :     0.0065 || Time : 448.494749 s
+epoch:  7/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0106 || vailoss :     0.0063 || Time : 448.924721 s
+epoch:  8/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0106 || vailoss :     0.0059 || Time : 448.877280 s
+epoch:  9/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0104 || vailoss :     0.0060 || Time : 449.534128 s
+epoch: 10/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0090 || vailoss :     0.0055 || Time : 452.772838 s
+epoch: 11/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0092 || vailoss :     0.0053 || Time : 452.054882 s
+epoch: 12/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0085 || vailoss :     0.0057 || Time : 451.797916 s
+epoch: 13/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0089 || vailoss :     0.0057 || Time : 450.596177 s
+epoch: 14/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0083 || vailoss :     0.0049 || Time : 449.580567 s
+epoch: 15/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0073 || vailoss :     0.0055 || Time : 448.598827 s
+epoch: 16/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0079 || vailoss :     0.0048 || Time : 448.690888 s
+epoch: 17/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0083 || vailoss :     0.0048 || Time : 449.603893 s
+epoch: 18/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0096 || vailoss :     0.0132 || Time : 449.213109 s
+epoch: 19/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0112 || vailoss :     0.0058 || Time : 446.244987 s
+epoch: 20/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0096 || vailoss :     0.0047 || Time : 445.065464 s
+epoch: 21/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0083 || vailoss :     0.0045 || Time : 445.539599 s
+epoch: 22/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0080 || vailoss :     0.0048 || Time : 445.297371 s
+epoch: 23/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0081 || vailoss :     0.0048 || Time : 445.363423 s
+epoch: 24/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0077 || vailoss :     0.0047 || Time : 444.983550 s
+epoch: 25/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0072 || vailoss :     0.0045 || Time : 445.115517 s
+epoch: 26/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0074 || vailoss :     0.0050 || Time : 444.832873 s
+epoch: 27/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0071 || vailoss :     0.0048 || Time : 444.958736 s
+epoch: 28/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0043 || Time : 445.128712 s
+epoch: 29/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0065 || vailoss :     0.0045 || Time : 445.305637 s
+epoch: 30/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0067 || vailoss :     0.0044 || Time : 445.610871 s
+epoch: 31/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0043 || Time : 445.204280 s
+epoch: 32/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0071 || vailoss :     0.0046 || Time : 445.149695 s
+epoch: 33/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0069 || vailoss :     0.0040 || Time : 445.286987 s
+epoch: 34/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0139 || vailoss :     0.0077 || Time : 444.423296 s
+epoch: 35/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0102 || vailoss :     0.0051 || Time : 441.911235 s
+epoch: 36/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0086 || vailoss :     0.0047 || Time : 442.095855 s
+epoch: 37/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0083 || vailoss :     0.0050 || Time : 442.168162 s
+epoch: 38/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0078 || vailoss :     0.0053 || Time : 442.603112 s
+epoch: 39/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0068 || vailoss :     0.0043 || Time : 441.702488 s
+epoch: 40/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0094 || vailoss :     0.0052 || Time : 441.606430 s
+epoch: 41/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0073 || vailoss :     0.0043 || Time : 440.723398 s
+epoch: 42/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0081 || vailoss :     0.0045 || Time : 442.665875 s
+epoch: 43/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0075 || vailoss :     0.0046 || Time : 442.553284 s
+epoch: 44/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0073 || vailoss :     0.0049 || Time : 442.468829 s
+epoch: 45/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0068 || vailoss :     0.0042 || Time : 442.146244 s
+epoch: 46/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0065 || vailoss :     0.0039 || Time : 442.112926 s
+epoch: 47/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0065 || vailoss :     0.0051 || Time : 441.596166 s
+epoch: 48/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0072 || vailoss :     0.0039 || Time : 441.672073 s
+epoch: 49/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0071 || vailoss :     0.0040 || Time : 441.914199 s
+epoch: 50/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0068 || vailoss :     0.0041 || Time : 441.208997 s
+epoch: 51/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0066 || vailoss :     0.0052 || Time : 442.008615 s
+epoch: 52/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0043 || Time : 442.101887 s
+epoch: 53/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0068 || vailoss :     0.0044 || Time : 442.015739 s
+epoch: 54/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0063 || vailoss :     0.0038 || Time : 442.203581 s
+epoch: 55/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0063 || vailoss :     0.0038 || Time : 441.835106 s
+epoch: 56/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0037 || Time : 441.101635 s
+epoch: 57/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0080 || vailoss :     0.0071 || Time : 442.461704 s
+epoch: 58/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0082 || vailoss :     0.0043 || Time : 444.711362 s
+epoch: 59/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0075 || vailoss :     0.0045 || Time : 443.537972 s
+epoch: 60/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0063 || vailoss :     0.0046 || Time : 443.428459 s
+epoch: 61/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0071 || vailoss :     0.0039 || Time : 442.866454 s
+epoch: 62/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0064 || vailoss :     0.0052 || Time : 442.157758 s
+epoch: 63/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0066 || vailoss :     0.0040 || Time : 442.460251 s
+epoch: 64/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0085 || vailoss :     0.0049 || Time : 443.277388 s
+epoch: 65/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0075 || vailoss :     0.0038 || Time : 443.343073 s
+epoch: 66/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0058 || vailoss :     0.0040 || Time : 442.110603 s
+epoch: 67/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0087 || vailoss :     0.0050 || Time : 442.717308 s
+epoch: 68/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0074 || vailoss :     0.0037 || Time : 442.254873 s
+epoch: 69/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0068 || vailoss :     0.0047 || Time : 442.304897 s
+epoch: 70/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0073 || vailoss :     0.0037 || Time : 443.334429 s
+epoch: 71/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0079 || vailoss :     0.0044 || Time : 442.790895 s
+epoch: 72/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0045 || Time : 442.060049 s
+epoch: 73/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0068 || vailoss :     0.0043 || Time : 442.548500 s
+epoch: 74/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0062 || vailoss :     0.0039 || Time : 442.619071 s
+epoch: 75/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0060 || vailoss :     0.0042 || Time : 442.205620 s
+epoch: 76/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0057 || vailoss :     0.0040 || Time : 441.531486 s
+epoch: 77/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0059 || vailoss :     0.0039 || Time : 441.503298 s
+epoch: 78/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0056 || vailoss :     0.0048 || Time : 442.255249 s
+epoch: 79/80 || >>>>>>>>>>>>>>>>>>>> || Loss :     0.0063 || vailoss :     0.0039 || Time : 441.880847 s
