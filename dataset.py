@@ -11,11 +11,10 @@ random.seed(10)
 
 
 class ImageDataTrain(data.Dataset):
-    def __init__(self, data_root, data_list, image_size, device):
+    def __init__(self, data_root, data_list, image_size):
         self.data_root = data_root
         self.data_source = data_list
         self.image_size = image_size
-        self.device = torch.device(device)
 
         with open(self.data_source, 'r') as f:
             self.data_list = [x.strip() for x in f.readlines()]
@@ -67,17 +66,17 @@ def get_loader(config, mode='train', pin=True):
     shuffle = False
     if mode == 'train':
         shuffle = True
-        dataset = ImageDataTrain(config.train_root, config.train_list, config.image_size, config.device_id)
+        dataset = ImageDataTrain(config.train_root, config.train_list, config.image_size)
         data_loader = data.DataLoader(dataset=dataset, batch_size=config.batch_size, shuffle=shuffle,
                                       num_workers=config.num_thread, pin_memory=pin)
     elif mode == 'vail':
-        dataset = ImageDataTrain(config.vail_root, config.vail_list, config.image_size, config.device_id)
+        dataset = ImageDataTrain(config.vail_root, config.vail_list, config.image_size)
         data_loader = data.DataLoader(dataset=dataset, batch_size=1, shuffle=shuffle,
                                       num_workers=config.num_thread, pin_memory=pin)
     else:
         dataset = ImageDataTest(config.test_root, config.test_list)
         data_loader = data.DataLoader(dataset=dataset, batch_size=1, shuffle=shuffle,
-                                      num_workers=config.num_thread, pin_memory=pin)
+                                      num_workers=1, pin_memory=pin)
     return data_loader
 
 

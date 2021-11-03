@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@sshConfig://tongda@10.20.85.61:22 password/home2/tongda/anaconda3/envs/pyt/bin/python" />
+      </list>
+    </list>
+  </component>
+</project>

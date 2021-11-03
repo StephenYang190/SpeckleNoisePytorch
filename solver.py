@@ -1,9 +1,8 @@
 import torch
 import torch.nn as nn
-import numpy as np
-import os
-import cv2
 import time
+from torch.utils.tensorboard import SummaryWriter
+from build_model import buildModel
 
 
 class Solver(object):
@@ -12,7 +11,7 @@ class Solver(object):
         self.test_loader = test_loader
         self.config = config
         self.iter_size = config.iter_size
-        self.build_model()
+        self.build_model(config.op)
 
 
     # print the network information and parameter numbers
@@ -24,22 +23,23 @@ class Solver(object):
         print(model)
         print("The number of parameters: {}".format(num_params))
 
-    # build the network
-    def build_model(self):
-        from model.SNRom import SNRom
-        self.net = SNRom(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3, alpha_in=0.5,
-                alpha_out=0.5, stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
 
-        if self.config.cuda:
+    # build the network
+    def build_model(self, op):
+        self.net = buildModel(op)
+
+        if self.config.multi_gpu:
             self.net = nn.DataParallel(self.net)
-            self.net.to(self.device)
+            self.net = self.net.cuda()
+        else:
+            self.net = self.net.to("cuda:0")
 
         self.lr = self.config.lr
         self.wd = self.config.wd
 
         self.optimizer = torch.optim.Adam(self.net.parameters(), lr=self.lr, weight_decay=self.wd)
 
-        self.print_network(self.net, 'SNRNetwork')
+        self.print_network(self.net, 'SNRNetwork_' + op)
 
 
     # training phase
@@ -49,6 +49,7 @@ class Solver(object):
         Maxvailoss = 100
         down = nn.AvgPool2d(kernel_size=(2, 2), stride=2)
         self.optimizer.zero_grad()
+        writer = SummaryWriter("./tensorboard/" + self.config.op + '/')
 
         for epoch in range(self.config.epoch):
             TotalLoss = 0
@@ -56,7 +57,7 @@ class Solver(object):
             self.net.train()
             print("epoch: %2d/%2d || " % (epoch, self.config.epoch), end='')
             for i, data_batch in enumerate(self.train_loader):
-                Noise_img, GT_img = data_batch['data_image'].to(self.device), data_batch['data_label'].to(self.device)
+                Noise_img, GT_img = data_batch['data_image'].cuda(), data_batch['data_label'].cuda()
                 if (Noise_img.size(2) != GT_img.size(2)) or (Noise_img.size(3) != GT_img.size(3)):
                     print('IMAGE ERROR, PASSING```')
                     continue
@@ -67,33 +68,37 @@ class Solver(object):
                 Loss = loss_fun(output, GT_img) + 4 * loss_fun(low, down(GT_img))
                 TotalLoss += Loss
                 Loss.backward()
-                
+
                 self.optimizer.step()
                 self.optimizer.zero_grad()
-
 
                 if (i + 1) % (iter_num / 20) == 0:
                     print('>', end='', flush=True)
 
             time_e = time.time()
-
+            writer.add_scalar("Loss/train", TotalLoss / iter_num, epoch)
             self.net.eval()
             vailoss = 0
             loss_fun = nn.MSELoss()
             for i, data_batch in enumerate(self.test_loader):
                 with torch.no_grad():
-                    Noise_img, GT_img = data_batch['data_image'].to(self.device), data_batch['data_label'].to(self.device)
+                    Noise_img, GT_img = data_batch['data_image'].cuda(), data_batch['data_label'].cuda()
                     if (Noise_img.size(2) != GT_img.size(2)) or (Noise_img.size(3) != GT_img.size(3)):
                         print('IMAGE ERROR, PASSING```')
                         continue
 
                     output, _ = self.net(Noise_img)
                     vailoss += loss_fun(output, GT_img)
-            print(' || Loss : %10.4f || vailoss : %10.4f || Time : %f s' % (TotalLoss / iter_num, vailoss / vali_num, time_e - time_s))
-            if vailoss < Maxvailoss:
-                Maxvailoss = vailoss
+            print(' || Loss : %10.4f || vailoss : %10.4f || Time : %f s' % (
+            TotalLoss / iter_num, vailoss / vali_num, time_e - time_s))
+
+            # write tensorboard
+            writer.add_scalar("Train Loss", TotalLoss / iter_num, epoch)
+            writer.add_scalar("Vaild Loss", vailoss / vali_num, epoch)
+            if TotalLoss < Maxvailoss and epoch > 9:
+                Maxvailoss = TotalLoss
                 torch.save(self.net.state_dict(), '%s/epoch_%d.pth' % (self.config.save_folder, epoch + 1))
 
-
+        writer.flush()
         # save model
         torch.save(self.net.state_dict(), '%s/final.pth' % self.config.save_folder)
