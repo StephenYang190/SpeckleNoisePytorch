@@ -11,11 +11,11 @@ def buildModel(op):
         from model.SNRc import SNRc
         return SNRc(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3,
                         stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
-    elif(op == 'fdd'):
-        from model.FDDnet import Model
-        return Model(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3, alpha=0.5,
-                         stride=1, padding=1, dilation=1, groups=1, bias=False)
-    else:
+    elif(op == 'cm'):
         from model.SNRcm import SNRcm
         return SNRcm(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3,
-                         stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
+                     stride=1, padding=1, dilation=1, groups=1, bias=False, hide_layers=8)
+    else:
+        from model.FDDnet import Model
+        return Model(in_channels=1, hide_channels=64, out_channels=1, kernel_size=3, alpha=0.5,
+                     stride=1, padding=1, dilation=1, groups=1, bias=False)

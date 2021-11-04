@@ -1,7 +1,6 @@
 import torch.nn as nn
-import torch.nn.functional as F
-import octconv as oct
-import venconv as ven
+import model.octconv as oct
+import model.venconv as ven
 from model.median_pooling import median_pool_2d
 
 

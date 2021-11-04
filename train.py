@@ -29,7 +29,7 @@ if __name__ == '__main__':
     parser.add_argument('--multi_gpu', type=bool, default=True)
 
     # Training settings
-    parser.add_argument('--epoch', type=int, default=80)
+    parser.add_argument('--epoch', type=int, default=50)
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--num_thread', type=int, default=1)
     parser.add_argument('--load', type=str, default='')  # pretrained model
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     parser.add_argument('--train_list', type=str, default='/home2/tongda/data/speckleDATA/train.lst')
     parser.add_argument('--vail_root', type=str, default='/home2/tongda/data/speckleDATA/')
     parser.add_argument('--vail_list', type=str, default='/home2/tongda/data/speckleDATA/vail.lst')
-    parser.add_argument('--op', type=str, default='om', choices=['om', 'o', 'c', 'cm'])
+    parser.add_argument('--op', type=str, default='fdd', choices=['om', 'o', 'c', 'cm'])
 
     config = parser.parse_args()
 
