@@ -1,0 +1,6 @@
+/tensorboard
+/.idea
+/__pycache__
+model/__pycache__
+/checkpoints
+/test

@@ -22,7 +22,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Hyper-parameters
-    parser.add_argument('--n_color', type=int, default=3)
     parser.add_argument('--lr', type=float, default=0.0001)  # Learning rate resnet:1e-4
     parser.add_argument('--wd', type=float, default=0.0005)  # Weight decay
     parser.add_argument('--momentum', type=float, default=0.99)
