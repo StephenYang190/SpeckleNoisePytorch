@@ -1,5 +1,6 @@
 import torch.nn as nn
 import math
+import torch
 
 
 class OctaveConv(nn.Module):
@@ -136,8 +137,8 @@ class OctaveHighFeature(nn.Module):
             else:
                 x_l2h = self.conv_l2h(x_l)
                 x_l2h = self.upsample(x_l2h) if self.stride == 1 else x_l2h
-                x_h = x_l2h + x_h2h
-                x_l = x_h2l + x_l2l
+                x_h = torch.cat((x_l2h, x_h2h), 1)
+                x_l = torch.cat((x_l2l, x_h2l), 1)
                 return x_h, x_l
         else:
             return x_h2h, x_h2l
@@ -163,7 +164,7 @@ class OctaveHighFeature_BN_ACT(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, alpha=0.5, stride=1, padding=0, dilation=1,
                  groups=1, bias=False, norm_layer=nn.BatchNorm2d, activation_layer=nn.ReLU):
         super(OctaveHighFeature_BN_ACT, self).__init__()
-        self.conv = Conv_BN(in_channels, out_channels, kernel_size, alpha, stride, padding, dilation,
+        self.conv = OctaveHighFeature_BN(in_channels, out_channels, kernel_size, alpha, stride, padding, dilation,
                  groups, bias, norm_layer)
         self.act = activation_layer()
 

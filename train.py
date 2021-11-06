@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     # Hyper-parameters
     parser.add_argument('--lr', type=float, default=0.0001)  # Learning rate resnet:1e-4
-    parser.add_argument('--wd', type=float, default=0.0005)  # Weight decay
+    parser.add_argument('--wd', type=float, default=0.001)  # Weight decay
     parser.add_argument('--momentum', type=float, default=0.99)
     parser.add_argument('--image_size', type=int, default=128)
     parser.add_argument('--multi_gpu', type=bool, default=True)

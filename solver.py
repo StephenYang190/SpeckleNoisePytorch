@@ -65,7 +65,7 @@ class Solver(object):
 
                 loss_fun = nn.MSELoss()
                 Loss = loss_fun(output, GT_img) + 2 * loss_fun(low, down(GT_img))
-                trainLoss += Loss.data()
+                trainLoss += Loss.item()
                 Loss.backward()
 
                 self.optimizer.step()
@@ -86,7 +86,7 @@ class Solver(object):
                         continue
 
                     output, _ = self.net(Noise_img)
-                    validLoss += loss_fun(output, GT_img).data()
+                    validLoss += loss_fun(output, GT_img).item()
             print('Train Loss : %10.4f || Valid Loss : %10.4f || Time : %f s' % (
                 trainLoss / iter_num, validLoss / vali_num, time_e - time_s))
 
@@ -94,7 +94,7 @@ class Solver(object):
             writer.add_scalar("Train Loss", trainLoss / iter_num, epoch)
             writer.add_scalar("Vaild Loss", validLoss / vali_num, epoch)
             if validLoss < maxvalidLoss and epoch > 9:
-                maxvalidLoss = trainLoss
+                maxvalidLoss = validLoss
                 torch.save(self.net.state_dict(), '%s/epoch_%d.pth' % (self.config.save_folder, epoch + 1))
 
         writer.flush()

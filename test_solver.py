@@ -12,26 +12,19 @@ class Solver(object):
         self.config = config
         self.build_model(config.op)
 
-    # print the network information and parameter numbers
-    def print_network(self, model, name):
-        num_params = 0
-        for p in model.parameters():
-            num_params += p.numel()
-        print(name)
-        print(model)
-        print("The number of parameters: {}".format(num_params))
 
     # build the network
     def build_model(self, op):
         self.net = buildModel(op)
         self.net = self.net.to("cuda:0")
 
-        self.print_network(self.net, 'SNRNetwork')
 
     def test(self):
         files = os.listdir(self.config.model)
         for file in files:
-            outdir = os.path.join(self.config.test_folder, file.split()[0])
+            if not file.endswith(".pth"):
+                continue
+            outdir = os.path.join(self.config.test_folder, file.split('.')[0])
             if not os.path.exists(outdir):
                 os.makedirs(outdir)
             epoch_name = os.path.join(self.config.model, file)

@@ -1,6 +1,9 @@
-/tensorboard
-/.idea
-/__pycache__
+tensorboard
+.idea
+__pycache__
 model/__pycache__
-/checkpoints
-/test
+checkpoints
+test
+/origin
+*.pth
+TestResult

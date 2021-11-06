@@ -55,8 +55,8 @@ class ImageDataTest(data.Dataset):
         image = load_image_test(os.path.join(self.data_root, self.image_list[item].split()[0]))
         image = image.transpose((2, 0, 1))
         image = torch.Tensor(image)
-        
-        return {'image': image, 'name': self.image_list[item % self.image_num].split()[0].split('/')[-1],}
+
+        return {'image': image, 'name': self.image_list[item % self.image_num].split()[0].split('/')[-1], }
 
     def __len__(self):
         return self.image_num
