@@ -7,3 +7,5 @@ test
 /origin
 *.pth
 TestResult
+*.csv
+evaluate/
