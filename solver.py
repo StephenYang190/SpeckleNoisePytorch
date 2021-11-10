@@ -4,6 +4,8 @@ import time
 from torch.utils.tensorboard import SummaryWriter
 from build_model import buildModel
 from tqdm import tqdm
+from evaluate.calculate_metric import Cal_mertric_image
+import numpy as np
 
 
 class Solver(object):
@@ -42,6 +44,7 @@ class Solver(object):
         iter_num = len(self.train_loader.dataset) // self.config.batch_size
         vali_num = len(self.test_loader)
         maxvalidLoss = 100
+        maxuqi = 0
         down = nn.AvgPool2d(kernel_size=(2, 2), stride=2)
         writer = SummaryWriter("./tensorboard/" + self.config.op + '/')
 
@@ -62,7 +65,6 @@ class Solver(object):
                     continue
 
                 output, low = self.net(Noise_img)
-
                 loss_fun = nn.MSELoss()
                 Loss = loss_fun(output, GT_img) + 2 * loss_fun(low, down(GT_img))
                 trainLoss += Loss.item()
@@ -75,6 +77,10 @@ class Solver(object):
             # Valid
             self.net.eval()
             validLoss = 0
+            mssim = []
+            mpsnr = []
+            muqi = []
+
             loss_fun = nn.MSELoss()
             for i, data_batch in enumerate(self.test_loader):
                 # Do not store compute graph
@@ -87,15 +93,31 @@ class Solver(object):
 
                     output, _ = self.net(Noise_img)
                     validLoss += loss_fun(output, GT_img).item()
+                    ssim, psnr, uqi = Cal_mertric_image(np.squeeze(GT_img.cpu().numpy()), np.squeeze(output.cpu().numpy()))
+                    mssim.append(ssim)
+                    mpsnr.append(psnr)
+                    muqi.append(uqi)
+
+            mssim = np.mean(np.array(mssim))
+            mpsnr = np.mean(np.array(mpsnr))
+            muqi = np.mean(np.array(muqi))
             print('Train Loss : %10.4f || Valid Loss : %10.4f || Time : %f s' % (
                 trainLoss / iter_num, validLoss / vali_num, time_e - time_s))
+            print('MSSIM : %f || MPSNR : %f || MUQI : %f' %
+                  (mssim, mpsnr, muqi))
 
             # write tensorboard
             writer.add_scalar("Train Loss", trainLoss / iter_num, epoch)
             writer.add_scalar("Vaild Loss", validLoss / vali_num, epoch)
+            writer.add_scalar("MSSIM", mssim, epoch)
+            writer.add_scalar("MPSNR", mpsnr, epoch)
+            writer.add_scalar("MUQI", muqi, epoch)
+
             if validLoss < maxvalidLoss and epoch > 9:
                 maxvalidLoss = validLoss
                 torch.save(self.net.state_dict(), '%s/epoch_%d.pth' % (self.config.save_folder, epoch + 1))
+            if muqi > maxuqi:
+                torch.save(self.net.state_dict(), '%s/best_uqi.pth' % (self.config.save_folder))
 
         writer.flush()
         # save model

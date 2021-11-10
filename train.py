@@ -22,7 +22,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Hyper-parameters
-    parser.add_argument('--lr', type=float, default=0.0001)  # Learning rate resnet:1e-4
+    parser.add_argument('--lr', type=float, default=0.00005)  # Learning rate resnet:1e-4
     parser.add_argument('--wd', type=float, default=0.001)  # Weight decay
     parser.add_argument('--momentum', type=float, default=0.99)
     parser.add_argument('--image_size', type=int, default=128)
@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     # Training settings
     parser.add_argument('--epoch', type=int, default=50)
-    parser.add_argument('--batch_size', type=int, default=64)
+    parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--num_thread', type=int, default=1)
     parser.add_argument('--load', type=str, default='')  # pretrained model
     parser.add_argument('--save_folder', type=str, default='./checkpoints/')
@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # Train data
     parser.add_argument('--train_root', type=str, default='/home2/tongda/data/speckleDATA/')
-    parser.add_argument('--train_list', type=str, default='/home2/tongda/data/speckleDATA/train.lst')
+    parser.add_argument('--train_list', type=str, default='/home2/tongda/data/speckleDATA/train_new.lst')
     parser.add_argument('--vail_root', type=str, default='/home2/tongda/data/speckleDATA/')
     parser.add_argument('--vail_list', type=str, default='/home2/tongda/data/speckleDATA/vail.lst')
     parser.add_argument('--op', type=str, default='fdd', choices=['om', 'o', 'c', 'cm'])

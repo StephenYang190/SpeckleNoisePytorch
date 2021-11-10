@@ -9,3 +9,5 @@ test
 TestResult
 *.csv
 evaluate/
+other_methods
+old_codes
